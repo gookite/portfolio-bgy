@@ -1,0 +1,549 @@
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("path/to/CormorantGaramond-Light.woff2") format("woff2"),
+    url("path/to/CormorantGaramond-Light.woff") format("woff");
+  font-weight: 300;
+}
+/* 기본 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: auto;
+  background-color: #e6e4dd;
+}
+
+ul,
+ol {
+  list-style: none; /* 리스트 스타일 제거 */
+  padding: 0;
+  margin: 0;
+}
+
+/* 로고 스타일 */
+.logo {
+  color: #0756f2;
+  text-decoration: none !important;
+  font-family: "Cormorant Garamond", serif !important; /* Cormorant Garamond 폰트 적용 */
+  font-weight: 300; /* Light 스타일을 위해 적절한 굵기 설정 (300) */
+  font-size: 36px; /* 로고 텍스트의 폰트 크기 설정 */
+  margin: 1rem; /* 로고 주변의 여백 설정 */
+  z-index: 1000;
+}
+.logo a {
+  color: #0756f2;
+  text-decoration: none; /* 밑줄 제거 */
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  font-size: 36px;
+  margin: 1rem;
+  z-index: 1000;
+}
+
+/* 헤더 스타일 */
+header {
+  top: 0;
+  color: #0756f2;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 1rem;
+  background-color: transparent; /* 헤더 배경색 투명 설정 */
+  z-index: 1000;
+}
+
+/* 헤더 텍스트 스타일 */
+.header-txt {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  font-family: "Pretendard", sans-serif;
+}
+
+.header-txt a {
+  margin-left: 50px; /* 왼쪽 마진을 50px로 설정 */
+  text-decoration: none; /* 밑줄 제거 */
+  color: #0756f2; /* 링크의 색상 설정 */
+}
+
+.header-txt a:hover {
+  text-decoration: none;
+}
+
+.header-txt ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.header-txt li {
+  margin-left: 50px; /* 링크 간의 간격 설정 */
+}
+
+/* 로고 스타일 (헤더 내) */
+.header .logo a {
+  text-decoration: none; /* 밑줄 제거 */
+  color: #0756f2; /* 색상 설정 */
+}
+
+/* 별 스타일 */
+.star {
+  fill: #0756f2; /* 색상 설정 */
+  stroke: none;
+}
+
+.star1,
+.star2 {
+  position: absolute;
+  z-index: 1000;
+  transition: transform 0.5s ease; /* 스크롤 시 부드러운 이동 */
+}
+
+.star1 {
+  top: 150px;
+  right: 80px;
+  transform: rotate(20deg);
+}
+
+.star2 {
+  top: 350px;
+  right: 250px;
+  transform: rotate(45deg);
+}
+
+@keyframes moveUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+.scroll-up {
+  animation: moveUp 0.5s forwards;
+}
+
+/* 페이지0 텍스트 스타일 */
+.page0-txt {
+  position: fixed;
+  bottom: 20px;
+  left: 40px;
+  color: #0756f2;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+}
+.myself-in {
+  color: #0756f2;
+  font-family: "Cormorant Garamond", serif;
+}
+/* .myself-in p에 대한 스타일 설정 */
+.myself-in p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  color: #0756f2;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0;
+}
+.sentence {
+  font-family: "Cormorant Garamond", serif;
+}
+
+/* 원 스타일 */
+.circleone {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 150px;
+  height: 150px;
+  z-index: 1000;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+.rotating-text {
+  animation: rotateText 10s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes rotateText {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* 메인 텍스트 스타일 */
+.main-txt {
+  position: relative;
+  top: -50px;
+  left: -100px;
+  font-family: "Cormorant Garamond", serif !important; /* Cormorant Garamond 폰트 적용 */
+  font-weight: 300; /* Light 스타일을 위해 적절한 굵기 설정 (300) */
+  color: #0756f2 !important;
+  font-size: 140px; /* 메인 텍스트의 폰트 크기 설정 */
+  margin: 0; /* 텍스트 주변의 여백 설정 */
+  line-height: 100px; /* 텍스트 줄 간격 설정 */
+}
+
+.txt2 {
+  margin-left: 300px;
+}
+
+h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+}
+
+/* sentence 클래스의 스타일 */
+.sentence {
+  position: absolute; /* 부모 요소를 기준으로 절대 위치 설정 */
+  top: 200px; /* 부모 요소의 상단에 위치 */
+  left: 50%; /* 부모 요소의 중앙에 위치 */
+  transform: translateX(-50%); /* 정확한 중앙 위치로 조정 */
+  font-family: "Cormorant Garamond", serif;
+  color: #0756f2;
+}
+
+.about {
+  color: #0756f2;
+  position: relative; /* 혹은 absolute */
+  top: 0; /* 요소를 50px 위로 이동 */
+}
+
+.about p {
+  font-size: 16px;
+  font-family: "Pretendard", sans-serif;
+}
+
+.skill {
+  float: right;
+  color: #0756f2;
+}
+.container {
+  display: flex;
+  justify-content: space-between; /* 요소들 사이에 간격 추가 */
+  align-items: flex-start; /* 요소들이 상단에서 동일한 높이로 정렬되도록 설정 */
+  margin-bottom: 20px; /* Educational Background와 간격 추가 */
+  margin-top: 100px;
+  top: 100px;
+}
+
+.about,
+.skill {
+  width: 48%; /* 각 요소가 부모 요소의 48% 너비를 차지하도록 설정 */
+}
+
+.educational-background {
+  margin-top: 20px; /* 상단 여백 추가 */
+  clear: both;
+}
+.skill-icon {
+  display: flex;
+  flex-wrap: wrap; /* 아이콘이 넘치지 않도록 자동 줄바꿈 */
+  gap: 10px; /* 아이콘 사이의 간격 설정 */
+}
+
+.skill-icon img {
+  width: 50px; /* 아이콘의 너비 설정 */
+  height: auto; /* 높이를 자동으로 설정하여 비율 유지 */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between; /* 요소들 사이에 간격 추가 */
+  align-items: flex-start; /* 요소들이 상단에서 동일한 높이로 정렬되도록 설정 */
+  margin-bottom: 70px; /* resume 버튼과의 간격을 조정 */
+  margin-top: 100px;
+  position: relative; /* 자식 요소를 절대 위치로 배치하기 위해 상대 위치 설정 */
+}
+
+.about,
+.skill,
+.education {
+  flex: 1; /* 요소들이 동일한 비율로 공간을 차지하도록 설정 */
+  margin: 0 10px; /* 좌우 여백 설정 */
+}
+
+/* 교육 스타일 */
+.education {
+  color: #0756f2;
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 텍스트 정렬 */
+  justify-content: space-between; /* 내용 사이에 여백 추가 */
+}
+
+.education h5 {
+  font-size: 10px;
+}
+
+.education p {
+  font-size: 18px;
+  font-family: "Pretendard", sans-serif;
+  margin-bottom: 4px; /* p 요소의 아래쪽 여백을 줄여서 span과의 간격을 좁힘 */
+}
+
+.education span {
+  font-size: 12px;
+  font-family: "Pretendard", sans-serif;
+  line-height: 1.6; /* 줄 간격 조정 */
+  color: #0756f2; /* 글자 색상 설정 */
+  display: inline-block; /* 줄 간격을 적용하기 위해 inline-block으로 설정 */
+  margin-top: 0; /* 상단 여백을 0으로 설정하여 p와의 간격을 줄임 */
+}
+
+/* resume 버튼 스타일 */
+.resume {
+  position: absolute; /* 화면에 고정된 위치 설정 */
+  bottom: -100px; /* 컨테이너의 하단에서 20px 떨어진 위치 */
+  right: 20px; /* 컨테이너의 우측에서 20px 떨어진 위치 */
+  background-color: #0756f2; /* 배경 색상 */
+  color: #fff !important; /* 글자 색상 (흰색으로 변경) */
+  padding: 15px 30px; /* 버튼 안쪽 여백 */
+  border: none; /* 테두리 제거 */
+  border-radius: 8px; /* 모서리 둥글게 */
+  font-family: "Pretendard", sans-serif; /* 폰트 설정 */
+  font-size: 16px; /* 폰트 크기 설정 */
+  text-decoration: none; /* 밑줄 제거 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  cursor: pointer; /* 마우스 커서 모양 변경 */
+  transition: background-color 0.3s, transform 0.3s; /* 부드러운 색상 전환과 크기 변경 */
+  z-index: 1000; /* 다른 요소들 위에 표시되도록 설정 */
+}
+.resume a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.resume:hover {
+  background-color: #064ab1; /* 호버 시 배경 색상 변경 */
+  transform: scale(1.05); /* 호버 시 버튼 크기 확대 */
+}
+/* 그래픽 섹션 스타일 */
+.graphic1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+/* graphic1의 이미지 스타일 설정 */
+.graphic1 img {
+  height: 400px; /* 이미지의 높이를 400px로 설정 */
+  width: auto; /* 너비는 자동으로 조정 */
+  object-fit: cover; /* 이미지의 비율을 유지하면서 요소를 채우도록 설정 */
+  display: block; /* 이미지 밑에 여백 제거 */
+  margin: 0 auto; /* 중앙 정렬 */
+}
+
+/* 그래픽 항목 스타일 */
+.graphic_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 그래픽 항목 스타일 */
+.graphic_list li {
+  background-color: transparent; /* 배경색 제거 */
+  border: none; /* 테두리 제거 */
+  overflow: hidden;
+  width: 200px; /* 너비 설정 (필요에 따라 조정 가능) */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 호버 시의 스타일 */
+.graphic_list li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.graphic_list li img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.graphic_list li p {
+  margin: 10px 0;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .graphic_list li,
+  .about_app-item {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .graphic_list li,
+  .about_app-item {
+    width: 100%;
+  }
+}
+
+/* about_item 클래스를 가진 모든 이미지의 크기를 300x300px로 설정 */
+.about_item img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover; /* 이미지 비율 유지 */
+}
+/* .about_item 컨테이너 설정 */
+.about_item {
+  position: relative; /* 자식 요소를 절대 위치로 배치할 수 있도록 설정 */
+  display: inline-block; /* 콘텐츠가 이미지 크기에 맞게 조정됨 */
+  width: 400px; /* 고정 너비 설정 */
+  height: 400px; /* 고정 높이 설정 */
+}
+
+/* 이미지 스타일 설정 */
+.about_item img {
+  width: 100%; /* 부모 요소의 너비와 맞춤 */
+  height: 100%; /* 부모 요소의 높이와 맞춤 */
+  object-fit: cover; /* 이미지가 부모 요소에 맞게 잘리도록 설정 */
+}
+
+/* .item_text를 이미지 위에 표시 */
+.item_text {
+  position: absolute; /* 부모 요소에 상대적으로 배치 */
+  top: 0; /* 상단에 위치 */
+  left: 0; /* 왼쪽에 위치 */
+  width: 100%; /* 부모 요소의 너비와 맞춤 */
+  height: 100%; /* 부모 요소의 높이와 맞춤 */
+  background-color: rgba(0, 0, 0, 0.7); /* 반투명 배경색 */
+  color: white; /* 텍스트 색상 */
+  display: flex; /* 텍스트를 중앙 정렬하기 위해 사용 */
+  align-items: center; /* 세로 방향 중앙 정렬 */
+  justify-content: center; /* 가로 방향 중앙 정렬 */
+  opacity: 0; /* 기본적으로 숨김 */
+  transition: opacity 0.3s ease; /* 부드러운 전환 효과 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  padding: 10px; /* 여백 추가 */
+  box-sizing: border-box; /* 패딩과 경계를 포함하여 전체 너비와 높이 계산 */
+  text-decoration: none !important; /* 텍스트 데코레이션 제거 */
+  font-family: "Pretendard", sans-serif; /* Pretendard 폰트 설정 */
+}
+/* .about_item의 링크 스타일 설정 */
+.about_item a {
+  text-decoration: none; /* 링크의 텍스트 데코레이션 제거 */
+  color: #0756f2; /* 링크의 색상을 상속받아 기본 텍스트 색상과 일치시킴 */
+  font-family: "Pretendard", sans-serif;
+}
+
+/* .item_text의 링크 스타일 설정 */
+.item_text a {
+  text-decoration: none; /* 링크의 텍스트 데코레이션 제거 */
+  color: inherit; /* 링크의 색상을 상속받아 기본 텍스트 색상과 일치시킴 */
+}
+
+/* 이미지에 마우스를 올렸을 때 .item_text 표시 */
+.about_item:hover .item_text {
+  opacity: 1; /* 마우스가 올라갔을 때 텍스트 보이도록 설정 */
+}
+/* about_app 요소 스타일 */
+.about_app {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* 각 about_app 항목 스타일 */
+.about_app-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* .about_app의 이미지 스타일 설정 */
+.about_app img {
+  height: 400px; /* 이미지의 높이를 400px로 설정 */
+  width: auto; /* 너비는 자동으로 조정 */
+  object-fit: cover; /* 이미지의 비율을 유지하면서 요소를 채우도록 설정 */
+  display: block; /* 이미지 밑에 여백 제거 */
+}
+
+.about_app-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about_app-item p {
+  margin: 10px 0;
+}
+
+.about_app-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 연락처 폼 스타일 */
+.contact-form {
+  background: transparent;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: none;
+  border-bottom: 2px solid #333;
+  background: transparent;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-bottom-color: #007bff;
+}
+
+.contact-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
