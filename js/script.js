@@ -1,12 +1,12 @@
 // script.js
-document.addEventListener('mousemove', (e) => {
+document.addEventListener("mousemove", (e) => {
   let mouseX = e.pageX + 10; // document의 x좌표값
   let mouseY = e.pageY + 10; // document의 y좌표값
 
-  let cursor = document.querySelector('.cursor');
-  cursor.style.left = mouseX + 'px';
-  cursor.style.top = mouseY + 'px';
-})
+  let cursor = document.querySelector(".cursor");
+  cursor.style.left = mouseX + "px";
+  cursor.style.top = mouseY + "px";
+});
 let isScrolling = false;
 const viewportHeight = window.innerHeight;
 
@@ -95,4 +95,15 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   window.addEventListener("wheel", handleScroll);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // 페이지 5를 확인하는 조건 (예: 특정 URL 또는 페이지 내용에 따라)
+  if (window.location.pathname === "/page5") {
+    // 로고 색상 변경
+    const logoLink = document.querySelector(".logo a");
+    if (logoLink) {
+      logoLink.style.color = "#fff";
+    }
+  }
 });

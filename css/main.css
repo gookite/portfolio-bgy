@@ -42,6 +42,9 @@ ol {
   margin: 1rem;
   z-index: 1000;
 }
+.page5 .logo a {
+  color: #fff; /* 페이지 5에서 색상 변경 */
+}
 
 /* 헤더 스타일 */
 header {
@@ -96,13 +99,6 @@ header {
   stroke: none;
 }
 
-.star1,
-.star2 {
-  position: absolute;
-  z-index: 1000;
-  transition: transform 0.5s ease; /* 스크롤 시 부드러운 이동 */
-}
-
 .star1 {
   top: 150px;
   right: 80px;
@@ -115,13 +111,11 @@ header {
   transform: rotate(45deg);
 }
 
-@keyframes moveUp {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-20px);
-  }
+.star1,
+.star2 {
+  position: absolute;
+  z-index: 1000;
+  animation: float 3s ease-in-out infinite; /* 3초 간격으로 반복 애니메이션 */
 }
 
 .scroll-up {
@@ -497,12 +491,17 @@ h3 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.app-txt {
+  font-family: "Cormorant Garamond", serif;
+  color: #0756f2;
+}
 /* 연락처 폼 스타일 */
 .contact-form {
   background: transparent;
   padding: 20px;
   max-width: 500px;
   margin: 0 auto;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .contact-form h2 {
@@ -520,12 +519,12 @@ h3 {
 .contact-form input,
 .contact-form textarea {
   border: none;
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid #fff;
   background: transparent;
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  color: #333;
+  color: #fff;
   margin-bottom: 20px;
 }
 
@@ -546,4 +545,12 @@ h3 {
 
 .contact-form button:hover {
   background-color: #0056b3;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
 }
