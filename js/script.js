@@ -107,3 +107,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+document.addEventListener('DOMContentLoaded', function() {
+  const graphic1 = document.querySelector('.graphic1');
+  const sections = document.querySelectorAll('section');
+  
+  function scrollToNextSection() {
+    const scrollLeft = graphic1.scrollLeft;
+    const sectionWidth = graphic1.scrollWidth / sections.length;
+    let nextSectionIndex = Math.floor(scrollLeft / sectionWidth) + 1;
+
+    if (nextSectionIndex < sections.length) {
+      sections[nextSectionIndex].scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  // graphic1.addEventListener('scroll', function() {
+  //   if (graphic1.scrollLeft + graphic1.clientWidth >= graphic1.scrollWidth) {
+  //     scrollToNextSection();
+  //   }
+  // });
+});

@@ -1,7 +1,7 @@
 /* 기본 스타일 */
 .cursor {
   position: absolute;
-  z-index: 1;
+  z-index: 9999;
 }
 .cursor img{
   width: 50px;
@@ -46,6 +46,7 @@ body {
   background-color: #e6e4dd;
 }
 
+
 #page2 {
   background-color: #fbf5f3;
   overflow-x: auto; /* 가로 스크롤 허용 */
@@ -67,10 +68,15 @@ body {
 
 #page4 {
   background-color: #a0b8e3;
+  /* height: max-content; */
 }
 
 #page5 {
   background-color: #5487ea;
+}
+#page6 {
+  background-color: #5487ea;
+  height: 300px;
 }
 
 /* 추가 스타일 */
@@ -85,3 +91,4 @@ main {
   width: 100vw; /* 전체 화면 너비 */
   overflow: hidden; /* 스크롤 숨기기 */
 }
+
